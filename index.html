@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adithya MV | Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+body {
+    min-height:100vh; display:flex; justify-content:center; align-items:center;
+    background:#000; overflow:hidden; color:white;
+}
+body::before {
+    content:""; position:absolute; top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.07) 1%, transparent 1%) repeat;
+    background-size:50px 50px; animation:ripple 6s infinite linear; z-index:-1;
+}
+@keyframes ripple { 0%{background-size:50px 50px;} 50%{background-size:55px 55px;} 100%{background-size:50px 50px;} }
+
+.container {
+    width:90%; max-width:900px; padding:30px; border:3px solid transparent;
+    border-radius:20px; backdrop-filter:blur(10px); background:rgba(255,255,255,0.05);
+    box-shadow:0 0 30px rgba(255,255,255,0.3); position:relative; animation:fadeIn 2s ease;
+}
+.container::before {
+    content:""; position:absolute; inset:0; border-radius:20px; padding:3px;
+    background: linear-gradient(45deg,#00f7ff,#ff00ff,#00ff99,#fffb00);
+    background-size: 300% 300%; animation: glow 6s linear infinite; z-index:-1;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+}
+@keyframes glow { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+@keyframes fadeIn { from{opacity:0; transform:scale(0.9);} to{opacity:1; transform:scale(1);} }
+
+h1 { text-align:center; font-size:2.8rem; margin-bottom:10px; }
+.typing { border-right: 3px solid cyan; white-space: nowrap; overflow: hidden; width:0;
+display:inline-block; animation: typing 3s steps(30,end) forwards, blink 0.7s step-end infinite;}
+@keyframes typing { from{width:0;} to{width:100%;} }
+@keyframes blink { 50%{border-color:transparent;} }
+
+.section { margin-top:30px; text-align:center; opacity:0; animation:fadeUp 1.5s forwards; }
+.section h2 { font-size:2rem; margin-bottom:15px; }
+.projects { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.card {
+    background: rgba(255,255,255,0.1); padding:20px; border-radius:15px;
+    border:1px solid rgba(255,255,255,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative; min-width:180px;
+}
+.card:hover { transform:scale(1.05); box-shadow:0 0 15px rgba(255,255,255,0.5); }
+.badge {
+    position:absolute; top:10px; right:10px; background:cyan; color:#000;
+    font-size:0.8rem; font-weight:700; padding:3px 7px; border-radius:12px;
+}
+
+.contact { text-align:center; margin-top:30px; opacity:0; animation:fadeUp 1.5s forwards; animation-delay:1s; }
+.contact a { display:inline-block; margin:10px; font-size:1.3rem; color:white; text-decoration:none; transition:0.3s; }
+.contact a:hover { color:cyan; }
+.icon { font-size:1.8rem; vertical-align:middle; }
+
+p { margin-bottom:5px; opacity:0; transform:translateY(20px); animation:fadeUp 1.5s forwards; }
+p:nth-of-type(1){animation-delay:3s;} p:nth-of-type(2){animation-delay:3.3s;}
+p:nth-of-type(3){animation-delay:3.6s;} p:nth-of-type(4){animation-delay:3.9s;}
+@keyframes fadeUp { to{opacity:1; transform:translateY(0);} }
+
+.about { text-align:center; margin-top:20px; opacity:0; animation:fadeUp 1.5s forwards; animation-delay:4.2s; }
+.about p { font-size:1.1rem; color: #ddd; }
+</style>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <h1><span class="typing">Adithya MV</span></h1>
+    <p>Class: XI-B</p>
+    <p>Subject: Artificial Intelligence</p>
+    <p>School: PM Shri Kendriya Vidyalaya ASC</p>
+
+    <div class="about">
+        <p>Currently learning Web Development and AI projects. Excited to create innovative solutions in the near future!</p>
+    </div>
+
+    <div class="section">
+        <h2>Upcoming Projects</h2>
+        <div class="projects">
+            <div class="card">
+                Web Page Development
+                <span class="badge">Coming Soon</span>
+            </div>
+            <div class="card">
+                Music Bot Development
+                <span class="badge">Coming Soon</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>Contact</h2>
+        <a href="mailto:adithyamv312@gmail.com">📧 adithyamv312@gmail.com</a><br>
+        <a href="#" title="X (Twitter)"><i class="fab fa-x-twitter icon"></i></a>
+    </div>
+</div>
+</body>
+</html>
